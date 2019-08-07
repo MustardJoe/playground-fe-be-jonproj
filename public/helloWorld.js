@@ -16,7 +16,7 @@ function serveStaticFiles(res, path, contentType, responseCode) {
 }
 
 http.createServer(function(req, res) {
-  let path = req.url.replace(/\/?(?:\?.*)?$/,'').toLowerCase();
+  let path = req.url.replace(/\/?(?:\?.*)?$/, '').toLowerCase();
   switch(path) {
     case '':
       serveStaticFiles(res, '/index.html', 'text/html');
@@ -27,4 +27,5 @@ http.createServer(function(req, res) {
   }
 }).listen(7890);
 
+// eslint-disable-next-line no-console
 console.log('Server started on port 7890');
